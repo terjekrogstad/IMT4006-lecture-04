@@ -1,0 +1,12 @@
+<h2>REST And SOAP</h2>
+
+<p>SOAP 1.1 and SOAP 1.2 supports a HTTP binding, which uses HTTP GET</p>
+<p>HTTP GET does not allow a request body so there can't be any SOAP content in the request</p>
+<pre class="fragment roll-in">
+    <code class="http">
+    GET /www.socweather.com/temp?city=Honolulu&when=now HTTP/1.1
+    Host: www.socweather.com
+    Accept: text/html, application/soap+xml
+    </code>
+</pre>
+

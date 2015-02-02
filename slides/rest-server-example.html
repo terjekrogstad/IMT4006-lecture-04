@@ -1,0 +1,56 @@
+<h2>REST Server Example</h2>
+
+<p>
+    Let's say we have already implemented a order manager class and some kind of URI parser as an API for managing products.<br>
+    <small>Please ignore the obvious lack of validation and security processes in this script.</small>
+</p>
+<pre>
+    <code class="php">&lt;?php
+
+    $orderManager = new OrderManager();
+    $toolbox = new ToolBox();               //Imagine a helper class for typical repetitive tasks
+
+    $uriFragments = explode( "/", $_SERVER['REQUEST_URI'] );
+    $collection = $uriFragments[1];
+    if( count( uriFragments )>2 )
+        $id = uriFragments[2];
+
+    $method = $_SERVER['REQUEST_METHOD'];
+
+
+
+    //Handle a specific item
+    if( isset( $id ) ){
+
+        switch( $method ) {
+            case 'POST' :
+              $data = $toolbox->getPostData();
+              $orderManager->createOrder( $id, $data );
+              break;
+            case 'PUT':
+              $data = $toolbox->getPutData();
+              $orderManager->updateOrder( $id, $data );
+              break;
+            case 'DELETE':
+              $orderManager->deleteOrder( $id );
+              break;
+            case 'GET':
+              $orderManager->displayOrder( $id );
+              break;
+
+            default:
+              header('HTTP/1.1 405 Method Not Allowed');
+              header('Allow: GET, PUT, DELETE');
+              break;
+        }
+
+
+    //Collection of items
+    }else{
+        
+        //As above, but operating on collection of items
+
+    }
+
+?&gt;</code>
+</pre>

@@ -1,0 +1,36 @@
+<h2>JSON Resources</h2>
+
+<p>How to return JSON?</p>
+
+<pre class="fragment roll-in">
+HTTP response with JSON
+    <code class="json">
+HTTP/1.1 200 OK
+Content-Type:application/json
+Content-Length: 999999999 
+
+{
+    "catalog" : [
+        {
+            "id"          : "bk101",
+            "author"      : "Gambarella, Matthew",
+            "title"       : "XML Developer's Guide",
+            "genre"       : "Computer",
+            "price"       : "44.95",
+            "publish_date" : "2000-10-01",
+            "description" : "An in-depth look at creating applications with XML."
+        },
+        {
+            "id"          : "bk102",
+            "author"      : "Ralls, Kim",
+            "title"       : "Midnight Rain",
+            "genre"       : "Fantasy",
+            "price"       : "5.95",
+            "publish_date" : "2000-12-16",
+            "description" : "A former architect battles corporate zombies, an evil sorceress, and her own childhood to become queen of the world."
+        }
+    ]
+}
+
+    </code>
+</pre>

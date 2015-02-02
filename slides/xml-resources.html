@@ -1,0 +1,33 @@
+<h2>XML Resources</h2>
+
+<p>How to return XML resources?</p>
+<pre class="fragment roll-in">
+    <code class="xml">
+HTTP/1.1 200 OK
+Content-Type:application/xml
+Content-Length: 99999999 
+
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;catalog&gt;
+   &lt;book id=&quot;bk101&quot;&gt;
+      &lt;author&gt;Gambardella, Matthew&lt;/author&gt;
+      &lt;title&gt;XML Developer's Guide&lt;/title&gt;
+      &lt;genre&gt;Computer&lt;/genre&gt;
+      &lt;price&gt;44.95&lt;/price&gt;
+      &lt;publish_date&gt;2000-10-01&lt;/publish_date&gt;
+      &lt;description&gt;An in-depth look at creating applications 
+      with XML.&lt;/description&gt;
+   &lt;/book&gt;
+   &lt;book id=&quot;bk102&quot;&gt;
+      &lt;author&gt;Ralls, Kim&lt;/author&gt;
+      &lt;title&gt;Midnight Rain&lt;/title&gt;
+      &lt;genre&gt;Fantasy&lt;/genre&gt;
+      &lt;price&gt;5.95&lt;/price&gt;
+      &lt;publish_date&gt;2000-12-16&lt;/publish_date&gt;
+      &lt;description&gt;A former architect battles corporate zombies, 
+      an evil sorceress, and her own childhood to become queen 
+      of the world.&lt;/description&gt;
+   &lt;/book&gt;
+&lt;/catalog&gt;
+    </code>
+</pre>

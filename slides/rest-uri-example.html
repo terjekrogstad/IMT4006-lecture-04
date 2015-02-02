@@ -1,0 +1,26 @@
+<h2>REST URI Examples</h2>
+
+<pre>
+All URIs should support GET, POST, PUT, DELETE
+    <code class="url">
+    //Identifies a collection of products
+    http://productservice.com/products
+
+    //Identifies product with id 112
+    http://productservice.com/products/112              
+
+    //Forecasts for region 543
+    http://weatherservice.com/regions/543/forecasts/    
+
+    //Forecast for region 543 at a specific date
+    http://weatherservice.com/regions/543/forecasts/2015-08-01
+
+    //Namespaced and versioned REST api
+    http://weather.com/api/v1.8/regions/543/forecasts  
+    </code>
+</pre>
+
+<p class="fragment roll-in">
+    <small>How to map URLs to controllers/scripts that responds with data?<br>
+    Use frameworks (ExpressJS, Zend etc.) that provides this out of the box or configure routing in the web server (Apache RewriteEngine etc.)</small>
+</p>
