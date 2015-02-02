@@ -1,0 +1,71 @@
+<h2>REST Client Example</h2>
+
+<p>
+A javascript XMLHttpRequest object example
+</p>
+
+<pre>
+    <code class="javascript">
+var req = createRequest();
+var url = '/api/orders';
+
+//Response callback
+req.onreadystatechange = function() {
+  
+  if (req.readyState != 4) return; //Response not yet recieved
+  
+  if (req.status != 200) {
+    //Request error
+    return;
+  }
+
+  //Request successful, read the response
+  var resp = req.responseText;
+  //... and use it as needed by your app.
+}
+
+
+req.open('POST', url, true);
+req.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded');
+req.send( formEncodedRequestBody );  //Form encoding needs to be implemented as well
+
+
+
+
+function createRequest() {
+  var result = null;
+  if (window.XMLHttpRequest) {
+    // FireFox, Safari, etc.
+    result = new XMLHttpRequest();
+    if (typeof xmlhttp.overrideMimeType != 'undefined') {
+      result.overrideMimeType('text/xml'); // Or anything else
+    }
+  }
+  else if (window.ActiveXObject) {
+    // MSIE
+    result = new ActiveXObject("Microsoft.XMLHTTP");
+  } 
+  else {
+    // No known mechanism -- consider aborting the application
+  }
+  return result;
+}
+
+
+
+
+
+
+//Or do it in jQuery or Zepto with one method
+$.ajax( {
+    url     : url,
+    type    : 'POST',
+    data    : data,
+    success : function( data ){
+        //Do something with data
+    }
+});
+
+
+    </code>
+</pre>
