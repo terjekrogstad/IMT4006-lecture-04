@@ -1,7 +1,7 @@
 <h2>REST Server Example</h2>
 
 <p>
-    Let's say we have already implemented a order manager class as an API for managing products.<br>
+    Let's say we have already implemented a order manager class and some kind of URI parser as an API for managing products.<br>
     <small>Please ignore the obvious lack of validation and security processes in this script.</small>
 </p>
 <pre>
@@ -10,7 +10,6 @@
     $orderManager = new OrderManager();
     $toolbox = new ToolBox();               //Imagine a helper class for typical repetitive tasks
 
-    //Very basic URL parser
     $uriFragments = explode( "/", $_SERVER['REQUEST_URI'] );
     $collection = $uriFragments[1];
     if( count( uriFragments )>2 )
