@@ -45,7 +45,7 @@ module.exports = (grunt) ->
 
             livereload:
                 options:
-                    port: 9000
+                    port: 9010
                     # Change hostname to '0.0.0.0' to access
                     # the server from outside.
                     hostname: 'localhost'
@@ -80,7 +80,8 @@ module.exports = (grunt) ->
                         'bower_components/**'
                         'js/**'
                         'css/*.css',
-                        'images/**'
+                        'images/**',
+                        '*.jpg'
                     ]
                     dest: 'dist/'
                 },{
